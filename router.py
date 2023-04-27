@@ -20,10 +20,10 @@ from utils.files import process_report_files
 from sqlalchemy.sql.expression import func
 from config import FileConfig, StaticFilesConfig
 
-checkup_router = APIRouter()
+checkup_router = APIRouter(prefix="/checkups")
 
 
-@checkup_router.get("/checkups", status_code=status.HTTP_200_OK,
+@checkup_router.get("/", status_code=status.HTTP_200_OK,
                     description="return all checkups for requested hospital")
 def get_checkups(token_data: UserToken | StaffToken = Depends(validate_token)) -> List[Checkup]:
 
