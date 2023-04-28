@@ -20,7 +20,7 @@ from utils.files import process_report_files
 from sqlalchemy.sql.expression import func
 from config import FileConfig, StaticFilesConfig
 
-checkup_router = APIRouter(prefix="/checkups")
+checkup_router = APIRouter()
 
 
 @checkup_router.get("/", status_code=status.HTTP_200_OK,
